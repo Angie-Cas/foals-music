@@ -8,7 +8,7 @@
 }
 
 body {
-    background: red;
+    background: black;
 }
 
 /* -------- NAV -------- */
@@ -112,7 +112,7 @@ header::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    background-color: white;
     position: relative;
     top: -100px;
     left: 40%;
@@ -156,29 +156,44 @@ header::before {
     text-transform: uppercase;
 }
 
-/* ARTICLES */
+/* ARTICLE WARP */
 
-.main-content-container .article {
+.article-wrap {
+    display: block;
     margin-bottom: 50px;
 }
 
-.main-content-container h2 {
+/* ARTICLES */
+
+.article-wrap .article {
+    vertical-align: top;
+    margin-bottom: 100px;
+}
+
+.article-wrap h2 {
     text-transform: uppercase;
 }
 
-.main-content-container img {
+.article-wrap img {
     width: 100%;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
+.article p {
+    display: none;
+}
+
+.article p:first-of-type {
+    display: block;
+}
+
 /* READ MORE BUTTON */
 
-.main-content-container .article-btn {
+.article-wrap .article-btn {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    margin-bottom: 50px;
     transition: all 1s;
     float: right;
     text-align: center;
@@ -194,6 +209,9 @@ header::before {
     opacity: 0.8;
 }
 
+hr {
+    display: none;
+}
 
 /* ADITIONAL INFORMATION */
 
@@ -287,7 +305,7 @@ header::before {
     padding: 10px;
     text-align: center;
     float: right;
-    margin-top: -60px;
+    margin-top: -50px;
     transition: all 1s;
 }
 
@@ -388,12 +406,36 @@ header::before {
 /* ARTICLES */
 @media (min-width: 1024px) {
     .main-content-container {
-        width: 50%;
+        width: 70%;
         margin: auto;
+    }
+
+    .article-wrap {
+        margin-bottom: 0px;
+    }
+
+    .article-wrap .article {
+        width: 28%;
+        display: inline-block;
+        margin-right: 5%;
+        overflow: hidden;
+        margin-bottom: 50px;
     }
 
     .article h2 {
         font-size: 32px;
+    }
+
+    .article p {
+        display: block;
+    }
+
+    .article-btn {
+        display: none;
+    }
+
+    hr {
+        display: block;
     }
 }
 
@@ -403,6 +445,10 @@ header::before {
         width: 50%;
         margin: auto;
         margin-bottom: 100px;
+    }
+
+    .aditional-info img {
+        width: 50%;
     }
 }
 
@@ -417,7 +463,18 @@ header::before {
 /* LIVE */
 
 @media (min-width: 1024px){
-    .live-btn {
-        margin-top: -50px;
+    .live-item {
+        width: 70%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+/* BOOKING */
+
+@media (min-width: 1024px){
+    form {
+        width: 70%;
+        margin: auto;
     }
 }
